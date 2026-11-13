@@ -1,0 +1,9 @@
+data/
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+.env
+.env.*
+node_modules/
+docs/superpowers/

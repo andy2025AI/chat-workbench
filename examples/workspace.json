@@ -1,0 +1,39 @@
+{
+  "focus": "样例数据：把一件事推进到可验证的结果",
+  "revision": 0,
+  "tasks": [
+    {
+      "id": "sample-conversation",
+      "title": "整理一次 AI 对话的下一步",
+      "category": "项目工作",
+      "status": "进行中",
+      "next": "从长对话里找出尚未完成的一件事，写下一个具体动作。",
+      "acceptance": "隔一天回来，可以直接接着做。",
+      "url": "https://example.com/conversation",
+      "artifact": "",
+      "note": "合成样例；链接为演示占位地址。"
+    },
+    {
+      "id": "sample-backup",
+      "title": "验证备份能否恢复",
+      "category": "工具维护",
+      "status": "准备中",
+      "next": "导出一份备份，修改任务，再导入备份核对。",
+      "acceptance": "任务和重点恢复，自动备份仍保留修改前的版本。",
+      "url": "",
+      "artifact": "",
+      "note": "合成样例，不代表任何人的真实工作进展。"
+    },
+    {
+      "id": "sample-debugging",
+      "title": "把一个报错讲清楚",
+      "category": "学习实践",
+      "status": "待开始",
+      "next": "运行一个测试，记录输入、预期行为与实际结果。",
+      "acceptance": "另一人能按步骤复现，并理解修复为什么有效。",
+      "url": "",
+      "artifact": "https://example.com/result",
+      "note": "合成样例；可从 docs/learning-01.md 开始。"
+    }
+  ]
+}

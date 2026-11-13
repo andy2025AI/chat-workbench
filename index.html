@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把 AI 对话里的任务、下一步和成果入口留在本机。">
+  <title>对话工作台 · Chat Workbench</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <aside>
+    <h2>对话工作台</h2>
+    <p>接着上次，继续做完</p>
+    <nav id="categories" aria-label="任务分类"></nav>
+    <div class="aside-bottom">数据保存在这台电脑<br>无需账号，打开就能继续</div>
+  </aside>
+  <main>
+    <header>
+      <span id="date"></span>
+      <div>
+        <button id="export">导出备份</button>
+        <button id="import">导入备份</button>
+        <input id="file" type="file" accept="application/json,.json" hidden>
+      </div>
+    </header>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">对话会翻页，下一步留在这里</p>
+        <h1>今天，从哪里继续？</h1>
+      </div>
+      <button class="primary" id="add">新增任务</button>
+    </section>
+    <section class="focus">
+      <label for="focus">本阶段重点</label>
+      <textarea id="focus" maxlength="5000" placeholder="写下你当前最想完成的一件事"></textarea>
+      <button id="saveFocus">保存重点</button>
+    </section>
+    <section class="toolbar">
+      <input type="search" id="search" placeholder="搜索任务、下一步或备注" aria-label="搜索任务">
+      <select id="status" aria-label="筛选状态"><option value="">全部状态</option></select>
+      <span id="count"></span>
+    </section>
+    <div id="message" role="status" aria-live="polite"></div>
+    <section id="tasks" aria-label="任务列表"></section>
+    <footer>对话链接用于返回原页面。任务由你维护，数据不会自动同步到 AI 服务。</footer>
+  </main>
+  <dialog id="editor">
+    <form id="form">
+      <div class="dialoghead">
+        <h2>编辑任务</h2><button type="button" id="close">关闭</button>
+      </div>
+      <label>任务名称<input name="title" required maxlength="200"></label>
+      <div class="twocol">
+        <label>所属分类<select name="category" aria-label="所属分类"></select></label>
+        <label>当前状态<select name="status" aria-label="当前状态"></select></label>
+      </div>
+      <label>下一步<textarea name="next" maxlength="10000"></textarea></label>
+      <label>完成标准<textarea name="acceptance" maxlength="10000"></textarea></label>
+      <label>对话链接<input name="url" type="url" placeholder="https://…" maxlength="10000"></label>
+      <label>成果链接<input name="artifact" type="url" placeholder="https://…" maxlength="10000"></label>
+      <label>备注 / 本地成果路径<textarea name="note" maxlength="10000"></textarea></label>
+      <div class="actions">
+        <button type="button" id="remove">删除任务</button>
+        <button class="primary" type="submit">保存任务</button>
+      </div>
+    </form>
+  </dialog>
+  <script src="/app.js"></script>
+</body>
+</html>
